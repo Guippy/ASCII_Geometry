@@ -10,9 +10,15 @@ void Pre_Create(int);
 int main(){
 int Shape;
 int x;
-printf("please chose the geometric form that you wish to print\nrectangular triangle(1)\n");
-scanf("%d", &Shape);
+printf("please chose the geometric shape that you wish to print\nrectangular triangle(1)\nRectangle|Square(2)\nCircle(W.I.P.)\n");
+int Scan_P = scanf("%d", &Shape);
+if (Scan_P == 0||Shape < 1||Shape > 2){
+    printf("program failed to run, please check your inputs.");
+    stop();
+}
+else{
 Pre_Create(Shape);
+}
 return 0;
 }
 
@@ -31,16 +37,30 @@ void stop(){
 void Pre_Create(int Form){
     switch (Form){
 case 1:
-printf("please inform the height of the triangle(min:2)(max:236)\n-->");
+printf("please inform the height of the triangle(min:2)\n-->");
 int height;
 int x = scanf("%d", &height);
-if (x == 0||height <=1||height > 236){
-    printf("program failed to run, please check your first input.");
+if (x == 0||height <=1){
+    printf("program failed to run, please check your inputs.");
+    stop();
 }
 else{
 Create_Triangle(height);
 }
 break;
+case 2:
+
+    printf("Please inform the size of the vertical side\n-->");
+    int V_side;
+    int Scan_Sqr = scanf("%d", &V_side);
+    printf("now inform the size of the horizontal side\n-->");
+    int H_side;
+    int Scan_Sq = scanf("%d", &H_side);
+    if (Scan_Sqr == 0||Scan_Sq == 0|| V_side < 1||H_side < 1){
+        printf("program failed to run, please check your inputs.");
+        stop();
+    }
+    Create_Rectangle_Square(V_side, H_side);
     }
 }
 
@@ -67,3 +87,35 @@ void Create_Triangle(int Height){
        printf("%c", Block2);
        stop();
     }
+
+
+
+void Create_Rectangle_Square(int V_Side, int H_Side){
+    char Block1 = 95;
+    char Block2 = 124;
+    char Block3 = 126;
+    char Space = 32;
+    int X;
+    int Y;
+    printf("%c", Space);
+    for(X = 0;X < H_Side;X++){
+            printf("%c", Block1);
+            printf("%c", Space);
+    }
+    for(X = 0; X < V_Side; X++){
+        printf("\n");
+        printf("%c", Block2);
+        for(Y = 0;Y < H_Side * 2 - 1;Y++){
+            printf("%c", Space);
+            if (Y == H_Side * 2 - 2){
+                printf("%c", Block2);
+            }
+        }
+    }
+    printf("\n%c",Space);
+for(X = 0;X < H_Side;X++){
+            printf("%c", Block3);
+            printf("%c", Space);
+}
+stop();
+}
