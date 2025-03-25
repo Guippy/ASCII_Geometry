@@ -2,12 +2,37 @@
 #include <string.h>
 
 void Create_Triangle(int);
+void stop();
+void Pre_Create(int);
+
 
 
 int main(){
-int z;
-int height;
+int Shape;
+int x;
+printf("please chose the geometric form that you wish to print\nrectangular triangle(1)\n");
+scanf("%d", &Shape);
+Pre_Create(Shape);
+return 0;
+}
+
+
+
+void stop(){
+    while(1){
+    int z;
+    printf("\n");
+    scanf("%d", &z);
+    }
+}
+
+
+
+void Pre_Create(int Form){
+    switch (Form){
+case 1:
 printf("please inform the height of the triangle(min:2)(max:236)\n-->");
+int height;
 int x = scanf("%d", &height);
 if (x == 0||height <=1||height > 236){
     printf("program failed to run, please check your first input.");
@@ -15,8 +40,10 @@ if (x == 0||height <=1||height > 236){
 else{
 Create_Triangle(height);
 }
-return 0;
+break;
+    }
 }
+
 
 
 void Create_Triangle(int Height){
@@ -30,7 +57,6 @@ void Create_Triangle(int Height){
             printf("%c", Block1);
             for(Y = 0; Y < X; Y++){
                 printf("%c", Space);
-
             }
             printf("%c\n", Block2);
        }
@@ -39,6 +65,5 @@ void Create_Triangle(int Height){
         printf("%c", Block3);
        }
        printf("%c", Block2);
-       int z;
-       scanf("%d", z);
+       stop();
     }
