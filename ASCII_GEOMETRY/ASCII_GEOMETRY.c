@@ -2,9 +2,9 @@
 #include <string.h>
 
 void Create_Triangle(int);
-void stop();
+void stop(int);
 void Pre_Create(int);
-//criar funcao stop com boolean failed
+
 
 
 int main(){
@@ -13,8 +13,7 @@ int x;
 printf("Chose the geometric shape that you wish to print\nrectangular triangle(1)\nRectangle|Square(2)\nCircle(W.I.P.)\n");
 int Scan_P = scanf("%d", &Shape);
 if (Scan_P == 0||Shape < 1||Shape > 2){
-    printf("Program failed to run, check your inputs.");
-    stop();
+    stop(1);
 }
 else{
 Pre_Create(Shape);
@@ -24,12 +23,16 @@ return 0;
 
 
 
-void stop(){
+void stop(Has_Failed){
+    if (Has_Failed == 1){
+    printf("Program failed to run, check your inputs.");
+    }
     while(1){
     int z;
     printf("\n");
     scanf("%d", &z);
     }
+
 }
 
 
@@ -41,8 +44,7 @@ printf("Input the height of the triangle(min:2)\n-->");
 int height;
 int x = scanf("%d", &height);
 if (x == 0||height <=1){
-    printf("Program failed to run, please check your inputs.");
-    stop();
+    stop(1);
 }
 else{
 Create_Triangle(height);
@@ -58,7 +60,7 @@ case 2:
     int Scan_Sq = scanf("%d", &H_side);
     if (Scan_Sqr == 0||Scan_Sq == 0|| V_side < 1||H_side < 1){
         printf("program failed to run, please check your inputs.");
-        stop();
+        stop(0);
     }
     Create_Rectangle_Square(V_side, H_side);
     }
@@ -85,7 +87,7 @@ void Create_Triangle(int Height){
         printf("%c", Block3);
        }
        printf("%c", Block2);
-       stop();
+       stop(0);
     }
 
 
@@ -117,5 +119,5 @@ for(X = 0;X < H_Side;X++){
             printf("%c", Block3);
             printf("%c", Space);
 }
-stop();
+stop(0);
 }
