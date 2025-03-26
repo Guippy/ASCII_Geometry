@@ -51,7 +51,6 @@ Create_Triangle(height);
 }
 break;
 case 2:
-
     printf("Input the size of the vertical side\n-->");
     int V_side;
     int Scan_Sqr = scanf("%d", &V_side);
@@ -59,11 +58,11 @@ case 2:
     int H_side;
     int Scan_Sq = scanf("%d", &H_side);
     if (Scan_Sqr == 0||Scan_Sq == 0|| V_side < 1||H_side < 1){
-        printf("program failed to run, please check your inputs.");
-        stop(0);
+        stop(1);
     }
     Create_Rectangle_Square(V_side, H_side);
     }
+    break;
 }
 
 
