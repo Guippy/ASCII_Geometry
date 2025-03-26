@@ -4,16 +4,16 @@
 void Create_Triangle(int);
 void stop();
 void Pre_Create(int);
-
+//criar funcao stop com boolean failed
 
 
 int main(){
 int Shape;
 int x;
-printf("please chose the geometric shape that you wish to print\nrectangular triangle(1)\nRectangle|Square(2)\nCircle(W.I.P.)\n");
+printf("Chose the geometric shape that you wish to print\nrectangular triangle(1)\nRectangle|Square(2)\nCircle(W.I.P.)\n");
 int Scan_P = scanf("%d", &Shape);
 if (Scan_P == 0||Shape < 1||Shape > 2){
-    printf("program failed to run, please check your inputs.");
+    printf("Program failed to run, check your inputs.");
     stop();
 }
 else{
@@ -37,11 +37,11 @@ void stop(){
 void Pre_Create(int Form){
     switch (Form){
 case 1:
-printf("please inform the height of the triangle(min:2)\n-->");
+printf("Input the height of the triangle(min:2)\n-->");
 int height;
 int x = scanf("%d", &height);
 if (x == 0||height <=1){
-    printf("program failed to run, please check your inputs.");
+    printf("Program failed to run, please check your inputs.");
     stop();
 }
 else{
@@ -50,10 +50,10 @@ Create_Triangle(height);
 break;
 case 2:
 
-    printf("Please inform the size of the vertical side\n-->");
+    printf("Input the size of the vertical side\n-->");
     int V_side;
     int Scan_Sqr = scanf("%d", &V_side);
-    printf("now inform the size of the horizontal side\n-->");
+    printf("Input the size of the horizontal side\n-->");
     int H_side;
     int Scan_Sq = scanf("%d", &H_side);
     if (Scan_Sqr == 0||Scan_Sq == 0|| V_side < 1||H_side < 1){
