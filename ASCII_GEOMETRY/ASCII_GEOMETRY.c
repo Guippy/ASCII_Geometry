@@ -9,14 +9,16 @@ void Pre_Create(int);
 
 int main(){
 int Shape;
-int x;
-printf("Chose the geometric shape that you wish to print\nrectangular triangle(1)\nRectangle|Square(2)\nCircle(W.I.P.)\n");
+    while (1){
+printf("\nChose the geometric shape that you wish to print\nRectangular Triangle(1)\nRectangle|Square(2)\nExit(3)\nClear(4)|only works on windows at the moment \n");
 int Scan_P = scanf("%d", &Shape);
-if (Scan_P == 0||Shape < 1||Shape > 2){
+if (Scan_P == 0||Shape < 1||Shape > 4){
     stop(1);
+    break;
 }
 else{
 Pre_Create(Shape);
+}
 }
 return 0;
 }
@@ -29,18 +31,19 @@ void stop(Has_Failed){
     }
     while(1){
     int z;
-    printf("\n");
+    printf("\nType anything to exit\n-->");
     scanf("%d", &z);
+    exit(0);
     }
-
 }
 
 
 
 void Pre_Create(int Form){
+    char Command_W[] = "cls";
     switch (Form){
 case 1:
-printf("Input the height of the triangle(min:2)\n-->");
+printf("Input the height of the trianglRe(min:2)\n-->");
 int height;
 int x = scanf("%d", &height);
 if (x == 0||height <=1){
@@ -61,8 +64,14 @@ case 2:
         stop(1);
     }
     Create_Rectangle_Square(V_side, H_side);
-    }
     break;
+case 3:
+    exit(0);
+    break;
+case 4:
+    system(Command_W);
+    break;
+    }
 }
 
 
@@ -86,7 +95,6 @@ void Create_Triangle(int Height){
         printf("%c", Block3);
        }
        printf("%c", Block2);
-       stop(0);
     }
 
 
@@ -115,6 +123,10 @@ void Create_Rectangle_Square(int V_Side, int H_Side){
     }
     printf("\n%c",Space);
 for(X = 0;X < H_Side;X++){
+            printf("%c", Block3);
+            printf("%c", Space);
+}
+}
             printf("%c", Block3);
             printf("%c", Space);
 }
