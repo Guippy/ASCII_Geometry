@@ -43,7 +43,7 @@ void Pre_Create(int Form){
     char Command_W[] = "cls";
     switch (Form){
 case 1:
-printf("Input the height of the trianglRe(min:2)\n-->");
+printf("Input the height of the triangle(min:2)\n-->");
 int height;
 int x = scanf("%d", &height);
 if (x == 0||height <=1){
