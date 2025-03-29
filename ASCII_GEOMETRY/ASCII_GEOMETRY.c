@@ -10,7 +10,7 @@ void Pre_Create(int);
 int main(){
 int Shape;
     while (1){
-printf("\nChose the geometric shape that you wish to print\nRectangular Triangle(1)\nRectangle|Square(2)\nExit(3)\nClear(4)|only works on windows at the moment \n");
+printf("\nChose the geometric shape that you wish to print\nRectangular Triangle(1)\nRectangle|Square(2)\nClear(3)|only works on windows at the moment\nExit(4)\n");
 int Scan_P = scanf("%d", &Shape);
 if (Scan_P == 0||Shape < 1||Shape > 4){
     stop(1);
@@ -66,10 +66,10 @@ case 2:
     Create_Rectangle_Square(V_side, H_side);
     break;
 case 3:
-    exit(0);
+    system(Command_W);
     break;
 case 4:
-    system(Command_W);
+    exit(0);
     break;
     }
 }
@@ -126,9 +126,4 @@ for(X = 0;X < H_Side;X++){
             printf("%c", Block3);
             printf("%c", Space);
 }
-}
-            printf("%c", Block3);
-            printf("%c", Space);
-}
-stop(0);
 }
