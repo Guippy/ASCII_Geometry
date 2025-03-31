@@ -14,7 +14,7 @@ int Shape;
     while (1){
 printf("\nChose the geometric shape that you wish to print\nRectangular Triangle(1)\nTriangle(2)\nRectangle|Square(3)\nClear(4)|only works on windows at the moment\nExit(5)\n");
 int Scan_P = scanf("%d", &Shape);
-if (Scan_P == 0||Shape < 1||Shape > 4){
+if (Scan_P == 0||Shape < 1||Shape > 5){
     stop(1);
     break;
 }
